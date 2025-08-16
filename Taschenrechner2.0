@@ -1,0 +1,55 @@
+/* Tag Nr. 2 mit Java: 
+- Verbesserter Taschenrechner mit der Quadratwurzel Funktion :) */
+
+
+import java.util.Scanner; //Scanner import lol
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Was soll nacher mit deinen Zahle passieren? [+,-,/,*,r -> (Squareroot)]");
+        char op = scan.nextLine().charAt(0);  //gilt als input für den operator
+
+
+        if (op == 'r' ){
+            System.out.println("Gib die Zahl an, von der du die Quadratwurzel möchtest");
+            double Zahlr = scan.nextDouble();
+            System.out.println("Ihr Ergebnis ist:"+ Math.sqrt(Zahlr));
+            System.exit(0);
+        }
+
+        System.out.println("Bitte geben sie ihre erste Zahl ein.");
+        double zahl1 = scan.nextDouble(); //input für Zahl nummer 1
+
+        System.out.println("Bitte geben sie ihre zweite Zahl ein");
+        double zahl2 = scan.nextDouble(); // input für Zahl nummer 2
+
+        // Jetzt müssen dei Zahlen und mit dem angegeben Operator verrechnet werden! Dies tue ich hier mit einem Switch :)
+
+        scan.close();
+
+        switch (op) {
+            case '+':
+                System.out.println("Ihre Ergebnis ist:" + (zahl1 + zahl2));
+                System.exit(0):
+
+            case '-':
+                System.out.println("Ihr Ergebnis ist:" + (zahl1 - zahl2));
+                System.exit(0);
+
+            case '*':
+                System.out.println("Ihr Ergebnis ist:" + (zahl1 * zahl2));
+                System.exit(0);
+            case '/':
+                if (zahl2 <= 0) {
+                    System.out.println("Ihre zweite Zahl darf nicht kleiner als 1 sein!");
+                    System.exit(0);
+                } else {
+                    System.out.println("Ihr Ergebnis ist" + (zahl1 / zahl2));
+                    System.exit(0);
+                }
+        }
+        }
+    }
