@@ -12,32 +12,27 @@ public class Main {
         System.out.println("Gib deine zweite Zahl ein:");
         double zahl2 = scan.nextDouble();
 
+        scan.nextLine(); //Löscht die eingabe von davor
+
         System.out.println("Welcher operator soll genutzt werden?(+,-,*,/)");
-        char op = new Scanner(System.in).nextLine().charAt(0);
+        char op = scan.nextLine().charAt(0);
 
         //.charAt(0) = char aber als nextline, die 0 in .charAt(0) gilt für die erste Position im input
-
-        if (op == '+') {
-
-        //bei if, muss die bedingung in Klammern stehen + die char-variable op in '' stehen
-
-            double ergebnis = zahl1 + zahl2;
-            System.out.println("Ihre Zahl ist:" + ergebnis);
-        }
-        else if (op == '-') {
-            double ergebnis = zahl1 - zahl2;
-            System.out.println("Ihre Zahl ist:"+ ergebnis);
-        }
-        else if (op == '*') {
-            double ergebnis = zahl1 * zahl2;
-            System.out.println("Ihre Zahl ist:"+ ergebnis);
-        }
-        else if (op == '/') {
-            double ergebnis = zahl1 / zahl2;
-            System.out.println("Ihre Zahl ist:" + ergebnis);
-        }
-        else {
-            System.out.println("Ihre Eingaben sind Falsch!");
-        }
+       switch (op) {
+           case '+':
+               System.out.println("Ihr Ergebnis ist "+ (zahl1 + zahl2));
+               break;
+           case '-':
+               System.out.println("Ihr Ergebnis ist"+ (zahl1 - zahl2));
+               break;
+           case '*':
+               System.out.println("ihr Ergebnis ist"+(zahl1 + zahl2));
+               break;
+           case '/':
+               System.out.println("Ihr Ergebnis ist:"+ (zahl1 + zahl2));
+               break;
+           default:
+               System.out.println("Einer ihrer Ergebnisse sind falsch");
+       }
     }
 }
